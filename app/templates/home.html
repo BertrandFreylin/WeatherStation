@@ -60,7 +60,7 @@ function createChart2() {
     title: {
       text: 'Humidity'
     },
-    yAxis: [{ // Primary yAxis
+    yAxis: [{
       labels: {
         format: '{value}%',
         style: {
@@ -89,7 +89,7 @@ function createChart2() {
 
     }],
     data: {
-      csvURL: '{% static "https://raspator.ddns.net/static/data/weather_humidity.csv" %}',
+      csvURL: "https://raspator.ddns.net/static/data/weather_humidity.csv",
       enablePolling: true,
       dataRefreshRate: 5
     }

@@ -44,9 +44,9 @@ function createChart() {
 
     }],
     data: {
-      csvURL: "{% static "css/weather_temp.csv" %}",
+      csvURL: "{% static "data/weather_temp.csv" %}",
       enablePolling: true,
-      dataRefreshRate: 2
+      dataRefreshRate: 5
     }
   });
 
@@ -89,9 +89,9 @@ function createChart2() {
 
     }],
     data: {
-      csvURL: '{% static "css/weather_humidity.csv" %}',
+      csvURL: '{% static "data/weather_humidity.csv" %}',
       enablePolling: true,
-      dataRefreshRate: 2
+      dataRefreshRate: 5
     }
   });
 

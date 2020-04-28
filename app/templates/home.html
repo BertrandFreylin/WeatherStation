@@ -44,7 +44,7 @@ function createChart() {
 
     }],
     data: {
-      csvURL: "{% static "data/weather_temp.csv" %}",
+      csvURL: "https://raspator.ddns.net/static/data/weather_temp.csv",
       enablePolling: true,
       dataRefreshRate: 5
     }
@@ -89,7 +89,7 @@ function createChart2() {
 
     }],
     data: {
-      csvURL: '{% static "data/weather_humidity.csv" %}',
+      csvURL: '{% static "https://raspator.ddns.net/static/data/weather_humidity.csv" %}',
       enablePolling: true,
       dataRefreshRate: 5
     }

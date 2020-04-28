@@ -1,6 +1,106 @@
 {% include "header.html" %}
 {% load static %}
 <body>
-RASP
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <div id="container2"></div>
+</figure>
+
+<script>
+function createChart() {
+  Highcharts.chart('container', {
+    chart: {
+      type: 'spline'
+    },
+    title: {
+      text: 'Temperature'
+    },
+    yAxis: [{
+      labels: {
+        format: '{value}°C',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        },
+      },
+      title: {
+        text: 'Temperature',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        },
+      },
+      opposite: false
+
+    }],
+    tooltip: {
+      valueDecimals: 1,
+      valueSuffix: '°C'
+    },
+    legend: {
+      enabled: false,
+    },
+    series: [{
+        name: 'Temperature',
+        color: Highcharts.getOptions().colors[0],
+
+    }],
+    data: {
+      csvURL: "{% static "css/weather_temp.csv" %}",
+      enablePolling: true,
+      dataRefreshRate: 2
+    }
+  });
+
+}
+
+function createChart2() {
+  Highcharts.chart('container2', {
+    chart: {
+      type: 'spline'
+    },
+    title: {
+      text: 'Humidity'
+    },
+    yAxis: [{ // Primary yAxis
+      labels: {
+        format: '{value}%',
+        style: {
+          color: Highcharts.getOptions().colors[2]
+        },
+      },
+      title: {
+        text: 'Humidity',
+        style: {
+          color: Highcharts.getOptions().colors[2]
+        },
+      },
+      opposite: false
+
+    }],
+    tooltip: {
+      valueDecimals: 1,
+      valueSuffix: '%'
+    },
+    legend: {
+      enabled: false,
+    },
+    series: [{
+        name: 'Humidity',
+        color: Highcharts.getOptions().colors[2],
+
+    }],
+    data: {
+      csvURL: '{% static "css/weather_humidity.csv" %}',
+      enablePolling: true,
+      dataRefreshRate: 2
+    }
+  });
+
+}
+
+createChart();
+createChart2();
+</script>
+
+
 </body>
 {% include "footer.html" %}

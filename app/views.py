@@ -5,7 +5,7 @@ from django.shortcuts import redirect
 from django.views.generic import TemplateView
 
 
-def page_not_found_view(request):
+def page_not_found_view(request, exception):
     return redirect(reverse('home'))
 
 

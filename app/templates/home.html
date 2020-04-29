@@ -26,13 +26,47 @@ function createChart() {
           color: Highcharts.getOptions().colors[0]
         },
       },
+      minorGridLineWidth: 0,
+      gridLineWidth: 0,
+      alternateGridColor: null,
+      plotBands: [{
+        from: 0,
+        to: 20,
+        color: 'rgba(68, 170, 213, 0.1)',
+        label: {
+          text: 'Take un pull',
+          style: {
+            color: '#606060'
+          }
+        }
+      },{
+        from: 20,
+        to: 35,
+        color: 'rgba(34,139,34, 0.1)',
+        label: {
+          text: 'Take un tshirt',
+          style: {
+            color: '#606060'
+          }
+        }
+      },{
+        from: 35,
+        to: 100,
+        color: 'rgba(255,165,0, 0.1)',
+        label: {
+          text: 'Take rien',
+          style: {
+            color: '#606060'
+          }
+        }
+      }],
       opposite: false
 
     }],
     tooltip: {
-        formatter: function(d){
-            return '<span style="color:'+Highcharts.getOptions().colors[0]+'">\u25CF</span> Temperature: <b> ' + this.y + '°C</b><br/>';
-        }
+      formatter: function(d) {
+        return '<span style="color:' + Highcharts.getOptions().colors[0] + '">\u25CF</span> Date: <b> ' + Highcharts.dateFormat('%e %b %Y, %H:%M', new Date(this.x)) + '</b><br/><span style="color:' + Highcharts.getOptions().colors[0] + '">\u25CF</span> Temperature: <b> ' + this.y + '°C</b><br/>';
+      }
     },
     legend: {
       enabled: false,
@@ -77,7 +111,7 @@ function createChart2() {
     }],
     tooltip: {
         formatter: function(d){
-            return '<span style="color:'+Highcharts.getOptions().colors[1]+'">\u25CF</span> Humidity: <b> ' + this.y + '%</b><br/>';
+            return '<span style="color:'+Highcharts.getOptions().colors[1]+'">\u25CF</span> Date: <b> ' + Highcharts.dateFormat('%e %b %Y, %H:%M', new Date(this.x)) + '</b><br/><span style="color:'+Highcharts.getOptions().colors[1]+'">\u25CF</span> Humidity: <b> ' + this.y + '%</b><br/>';
         }
     },
     legend: {

@@ -83,7 +83,7 @@ function createChart() {
     data: {
       csvURL: "https://raspator.ddns.net/static/data/weather_temp.csv",
       enablePolling: true,
-      dataRefreshRate: 5
+      dataRefreshRate: 60*12
     }
   });
 
@@ -129,7 +129,7 @@ function createChart2() {
     data: {
       csvURL: "https://raspator.ddns.net/static/data/weather_humidity.csv",
       enablePolling: true,
-      dataRefreshRate: 5
+      dataRefreshRate: 60*12
     }
   });
 

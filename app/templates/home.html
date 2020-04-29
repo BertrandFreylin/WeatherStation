@@ -30,8 +30,9 @@ function createChart() {
 
     }],
     tooltip: {
-      valueDecimals: 1,
-      valueSuffix: '°C'
+        formatter: function(d){
+            return '<span style="color:'+Highcharts.getOptions().colors[0]+'">\u25CF</span> Temperature: <b> ' + this.y + '°C</b><br/>';
+        }
     },
     legend: {
       enabled: false,
@@ -75,8 +76,9 @@ function createChart2() {
 
     }],
     tooltip: {
-      valueDecimals: 1,
-      valueSuffix: '%'
+        formatter: function(d){
+            return '<span style="color:'+Highcharts.getOptions().colors[1]+'">\u25CF</span> Humidity: <b> ' + this.y + '%</b><br/>';
+        }
     },
     legend: {
       enabled: false,

@@ -155,13 +155,13 @@ function createChart3() {
       labels: {
         format: '{value}°C',
         style: {
-          color: Highcharts.getOptions().colors[0]
+          color: Highcharts.getOptions().colors[3]
         },
       },
       title: {
         text: 'Temperature interior',
         style: {
-          color: Highcharts.getOptions().colors[0]
+          color: Highcharts.getOptions().colors[3]
         },
       },
       minorGridLineWidth: 0,
@@ -180,11 +180,11 @@ function createChart3() {
     },
     series: [{
       name: 'Temperature interior',
-      color: Highcharts.getOptions().colors[0],
+      color: Highcharts.getOptions().colors[3],
 
     }],
     data: {
-      csvURL: "https://raspator.ddns.net/static/data/weather_temp.csv",
+      csvURL: "https://raspator.ddns.net/static/data/therm_inside.csv",
       enablePolling: true,
       dataRefreshRate: 60*5
     },
@@ -207,13 +207,13 @@ function createChart4() {
       labels: {
         format: '{value}',
         style: {
-          color: Highcharts.getOptions().colors[1]
+          color: Highcharts.getOptions().colors[2]
         },
       },
       title: {
         text: 'Luminosity',
         style: {
-          color: Highcharts.getOptions().colors[1]
+          color: Highcharts.getOptions().colors[2]
         },
       },
       opposite: false

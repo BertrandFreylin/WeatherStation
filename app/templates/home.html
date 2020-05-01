@@ -172,7 +172,7 @@ function createChart3() {
     }],
     tooltip: {
       formatter: function(d) {
-        return '<span style="color:' + Highcharts.getOptions().colors[0] + '">\u25CF</span> Date: <b> ' + Highcharts.dateFormat('%e %b %Y, %H:%M', new Date(this.x)) + '</b><br/><span style="color:' + Highcharts.getOptions().colors[0] + '">\u25CF</span> Temperature interior: <b> ' + this.y + '°C</b><br/>';
+        return '<span style="color:' + Highcharts.getOptions().colors[3] + '">\u25CF</span> Date: <b> ' + Highcharts.dateFormat('%e %b %Y, %H:%M', new Date(this.x)) + '</b><br/><span style="color:' + Highcharts.getOptions().colors[3] + '">\u25CF</span> Temperature interior: <b> ' + this.y + '°C</b><br/>';
       }
     },
     legend: {
@@ -203,27 +203,27 @@ function createChart4() {
     title: {
       text: 'Luminosity'
     },
-    yAxis: [{
+    yAxis: {
       labels: {
         format: '{value}',
         style: {
-          color: Highcharts.getOptions().colors[2]
+          color: Highcharts.getOptions().colors[4]
         },
       },
       title: {
         text: 'Luminosity',
         style: {
-          color: Highcharts.getOptions().colors[2]
+          color: Highcharts.getOptions().colors[4]
         },
       },
       opposite: false,
       max: 255,
       min: 0,
 
-    }],
+    },
     tooltip: {
         formatter: function(d){
-            return '<span style="color:'+Highcharts.getOptions().colors[1]+'">\u25CF</span> Date: <b> ' + Highcharts.dateFormat('%e %b %Y, %H:%M', new Date(this.x)) + '</b><br/><span style="color:'+Highcharts.getOptions().colors[1]+'">\u25CF</span> Luminosity: <b> ' + this.y + '</b><br/>';
+            return '<span style="color:'+Highcharts.getOptions().colors[4]+'">\u25CF</span> Date: <b> ' + Highcharts.dateFormat('%e %b %Y, %H:%M', new Date(this.x)) + '</b><br/><span style="color:'+Highcharts.getOptions().colors[4]+'">\u25CF</span> Luminosity: <b> ' + this.y + '</b><br/>';
         }
     },
     legend: {

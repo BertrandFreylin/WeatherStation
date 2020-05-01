@@ -3,7 +3,9 @@
 <body>
     <div id="container" style="margin-bottom: 30px;"></div>
     <div id="container2" style="margin-bottom: 30px;"></div>
-    <div id="container3" style="text-align:center;">
+    <div id="container3" style="margin-bottom: 30px;"></div>
+    <div id="container4" style="margin-bottom: 30px;"></div>
+    <div id="container5" style="text-align:center;">
         <p style="text-align:center;">Live Photo</p>
         <img src="/static/image_last/last.jpg" alt="Live photo" style="height:600px;margin-bottom: 50px;">
     </div>
@@ -83,7 +85,7 @@ function createChart() {
     data: {
       csvURL: "https://raspator.ddns.net/static/data/weather_temp.csv",
       enablePolling: true,
-      dataRefreshRate: 60*12
+      dataRefreshRate: 60*5
     },
     credits: {
      enabled: false
@@ -132,7 +134,108 @@ function createChart2() {
     data: {
       csvURL: "https://raspator.ddns.net/static/data/weather_humidity.csv",
       enablePolling: true,
-      dataRefreshRate: 60*12
+      dataRefreshRate: 60*5
+    },
+    credits: {
+     enabled: false
+    },
+  });
+
+}
+
+function createChart3() {
+  Highcharts.chart('container3', {
+    chart: {
+      type: 'spline'
+    },
+    title: {
+      text: 'Temperature interior'
+    },
+    yAxis: [{
+      labels: {
+        format: '{value}°C',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        },
+      },
+      title: {
+        text: 'Temperature interior',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        },
+      },
+      minorGridLineWidth: 0,
+      gridLineWidth: 0,
+      alternateGridColor: null,
+      opposite: false
+
+    }],
+    tooltip: {
+      formatter: function(d) {
+        return '<span style="color:' + Highcharts.getOptions().colors[0] + '">\u25CF</span> Date: <b> ' + Highcharts.dateFormat('%e %b %Y, %H:%M', new Date(this.x)) + '</b><br/><span style="color:' + Highcharts.getOptions().colors[0] + '">\u25CF</span> Temperature interior: <b> ' + this.y + '°C</b><br/>';
+      }
+    },
+    legend: {
+      enabled: false,
+    },
+    series: [{
+      name: 'Temperature interior',
+      color: Highcharts.getOptions().colors[0],
+
+    }],
+    data: {
+      csvURL: "https://raspator.ddns.net/static/data/weather_temp.csv",
+      enablePolling: true,
+      dataRefreshRate: 60*5
+    },
+    credits: {
+     enabled: false
+    },
+  });
+
+}
+
+function createChart4() {
+  Highcharts.chart('container4', {
+    chart: {
+      type: 'spline'
+    },
+    title: {
+      text: 'Luminosity'
+    },
+    yAxis: [{
+      labels: {
+        format: '{value}',
+        style: {
+          color: Highcharts.getOptions().colors[1]
+        },
+      },
+      title: {
+        text: 'Luminosity',
+        style: {
+          color: Highcharts.getOptions().colors[1]
+        },
+      },
+      opposite: false
+
+    }],
+    tooltip: {
+        formatter: function(d){
+            return '<span style="color:'+Highcharts.getOptions().colors[1]+'">\u25CF</span> Date: <b> ' + Highcharts.dateFormat('%e %b %Y, %H:%M', new Date(this.x)) + '</b><br/><span style="color:'+Highcharts.getOptions().colors[1]+'">\u25CF</span> Luminosity: <b> ' + this.y + '</b><br/>';
+        }
+    },
+    legend: {
+      enabled: false,
+    },
+    series: [{
+      name: 'Luminosity',
+      color: Highcharts.getOptions().colors[1],
+
+    }],
+    data: {
+      csvURL: "https://raspator.ddns.net/static/data/photo.csv",
+      enablePolling: true,
+      dataRefreshRate: 60*5
     },
     credits: {
      enabled: false
@@ -143,6 +246,8 @@ function createChart2() {
 
 createChart();
 createChart2();
+createChart3();
+createChart4();
 </script>
 </body>
 {% include "footer.html" %}

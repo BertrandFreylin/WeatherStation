@@ -79,6 +79,13 @@ function createChart() {
             color: Highcharts.getOptions().colors[0],
 
         }],
+        plotOptions: {
+            series: {
+                marker: {
+                    enabled: false
+                }
+            }
+        },
         data: {
             csvURL: "https://raspator.ddns.net/static/data/weather_temp.csv",
             enablePolling: true,
@@ -128,6 +135,13 @@ function createChart2() {
             color: Highcharts.getOptions().colors[1],
 
         }],
+        plotOptions: {
+            series: {
+                marker: {
+                    enabled: false
+                }
+            }
+        },
         data: {
             csvURL: "https://raspator.ddns.net/static/data/weather_humidity.csv",
             enablePolling: true,
@@ -177,6 +191,13 @@ function createChart3() {
             color: Highcharts.getOptions().colors[3],
 
         }],
+        plotOptions: {
+            series: {
+                marker: {
+                    enabled: false
+                }
+            }
+        },
         data: {
             csvURL: "https://raspator.ddns.net/static/data/therm_inside.csv",
             enablePolling: true,
@@ -242,7 +263,13 @@ function createChart4() {
             }],
 
         }],
-
+        plotOptions: {
+        series: {
+            marker: {
+                    enabled: false
+                }
+            }
+        },
         data: {
             csvURL: "https://raspator.ddns.net/static/data/photo.csv",
             enablePolling: true,
